@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="assets/js/crystal.js"></script>
+<!--<script type="text/javascript">-->
+
+
+<!--// Creates variables.-->
+<!--var rv;-->
+<!--var nWins=0;-->
+<!--var nLoss=0;-->
+<!--var nGuess = 10;-->
+<!--var tmpTotalValue;-->
+
+<!--var CRYSTAL = {};-->
+<!--CRYSTAL = ({-->
+<!--randomCrystalVal: function () {-->
+<!--return Math.floor(Math.random() * 11) + 1;-->
+<!--},-->
+
+<!--getCrystalValues: function () {-->
+<!--var arr = [];-->
+<!--for (var i = 0; i < 4; i++) {-->
+<!--var j = this.randomCrystalVal();-->
+
+<!--//TO Generate unique values for each crystal we need to check if the random gen-->
+<!--//value already assigned to any other crystals.-->
+<!--while (($.inArray(j, arr) != -1)) {-->
+<!--j = this.randomCrystalVal();-->
+<!--}-->
+<!--arr[i] = j;-->
+<!--}-->
+<!--$(this).data('arr', arr);-->
+
+<!--return arr;-->
+<!--},-->
+<!--randomExpectVal: function () {-->
+<!--return Math.floor(Math.random() * 102) + 19;-->
+<!--},-->
+<!--initBindData: function(){-->
+<!--var arr3=[];-->
+<!--tmpTotalValue=0;-->
+<!--nGuess=10;-->
+<!--arr3 = this.getCrystalValues();-->
+<!--var attName = 'data-val';-->
+<!--var cl = "click";-->
+<!--for (var i = 0; i < 4; i++) {-->
+<!--var cid = '#c'+(i+1);-->
+<!--$(cid).data(attName, arr3[i]);-->
+<!--$(cid).bind(cl, {attName: arr3[i]}, this.onclick);-->
+<!--}-->
+<!--rv = this.randomExpectVal();-->
+<!--$("#leftBox").html("<p> Target Score : " + rv +"</p>");-->
+
+<!--$("#rightBox").html("<p> wins : " + nWins +"</p>"-->
+<!--+ "<p> losses : " + nLoss +"</p>"-->
+<!--+ "<p> Guess Remaining : " + nGuess +"</p>");-->
+
+<!--$("#div5").html("<p><font color=\"white\" size=\"4\">Your total score is: " + tmpTotalValue +"</font></p>");-->
+
+
+<!--console.log($('#c1').data(attName));-->
+<!--console.log($('#c2').data(attName));-->
+<!--console.log($('#c3').data(attName));-->
+<!--console.log($('#c4').data(attName));-->
+
+<!--},-->
+<!--removeBinding: function(){-->
+<!--var cl = "click";-->
+<!--for (var i = 0; i < 4; i++) {-->
+<!--var cid = '#c'+(i+1);-->
+
+<!--$(cid).unbind(cl, this.onclick);-->
+<!--}-->
+<!--},-->
+<!--onclick: function(event){-->
+<!--console.log("You clicked " + event.data.attName + " , Event img Id " + event.target.id);-->
+
+<!--tmpTotalValue+=event.data.attName;-->
+<!--if(tmpTotalValue === rv) {-->
+<!--nWins++;-->
+<!--CRYSTAL.removeBinding();-->
+<!--CRYSTAL.initBindData();-->
+<!--}-->
+<!--else if ( tmpTotalValue > rv )-->
+<!--{-->
+<!--nLoss++;-->
+<!--CRYSTAL.removeBinding();-->
+<!--CRYSTAL.initBindData();-->
+<!--}-->
+<!--else if(tmpTotalValue < rv && nGuess > 0){-->
+
+<!--nGuess&#45;&#45;;-->
+<!--console.log("In tmpTotalValue < rv && nGuess > 0 " + tmpTotalValue + " Guesses : " +  nGuess);-->
+<!--}-->
+<!--else-->
+<!--{-->
+<!--nLoss++;-->
+<!--CRYSTAL.removeBinding();-->
+<!--CRYSTAL.initBindData();-->
+<!--}-->
+<!--console.log("Target Value : " + rv);-->
+<!--console.log("Your Value : " + tmpTotalValue);-->
+
+<!--$("#rightBox").html("<p> wins : " + nWins +"</p>"-->
+<!--+ "<p> losses : " + nLoss +"</p>"-->
+<!--+ "<p> Guess Remaining : " + nGuess +"</p>");-->
+
+<!--$("#div5").html("<p><font color=\"white\" size=\"4\">Your total score is: " + tmpTotalValue +"</font></p>");-->
+
+
+<!--}-->
+<!--});-->
+
+
+<!--$(document).ready(function(){-->
+<!--CRYSTAL.initBindData()-->
+
+<!--});-->
+
+<!--console.log(rv);-->
+
+<!--</script>-->
+<div><h1 class="div1">CrystalsCollector!</h1></div>
+<div class="div2">
+    <p> You will be given a random number at the start of the game.</p>
+
+    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total
+        score.
+    </p>
+
+    <p>You win the game by matching your total score to random number, you lose the game if your total score goes above
+        the random number.</p>
+
+    <p>The value of each crystal is hidden from you until you click on it.</p>
+
+    <p>Each time when the game starts, the game will change the values of each crystal.</p></div>
+
+<div class="boxes">
+    <div id="leftBox"></div>
+    <div id="rightBox"></div>
+</div>
+
+
+<div class="images">
+    <img id="c1" src="assets/img/images.jpeg" width="100" height="100">
+    <img id="c2" src="assets/img/image2.jpeg" width="100" height="100">
+    <img id="c3" src="assets/img/image3.jpeg" width="100" height="100">
+    <img id="c4" src="assets/img/image4.jpeg" width="100" height="100">
+</div>
+
+<div id="div5">
+
+</div>
+
+<div id="div6">
+
+</div>
+
+
+</body>
+
+</html>
+  
